@@ -1,6 +1,7 @@
 // Gurpreet Singh 11242212  D3
 // this is my C project  for class 11 tH marksheet
 #include<stdio.h>
+#include <string.h>
 
 int main(){
     //School Information
@@ -31,48 +32,134 @@ scanf("%d", &ADM_No);
 
 
 // Stream and subject selection 
-int stream;
+char medical[5][20]= {"1-Biology", "\n2-Chemistry", "\n3-English", "\n4-Physics"};
+char non_med[5][20]= {"\n1-Mathemetics", "\n2-Chemistry", "\n3-English", "\n4-Physics"};
+char commerce[5][20]={"\n1-Business Studies", "\n2-Accountancy", "\n3-English", "\n4-Economics"};
+char arts[5][20]= {"\n1-Pol. Science", "\n2-Hindi", "\n3-English", "\n4-History"};
+char additional[3][20] = {"Physical Education", "Informatic Practices"};
+char selected_subjects[6][20];// Selected Subjects will be stored in this variable
+int ADDSBJ, i;
+int num_subjects = 0, stream;
 printf("Avilable streams\n 1- Medical \n 2-Non-medical \n 3-Commerce\n 4-Arts\n");
 printf("Enter your stream(1-4):");
 scanf("%d", &stream);
-switch (stream)
-{
-case 1: printf("Medical");
-    break;
-case 2: printf("Non-Medical");
-    break;
-case 3: printf("Commerce");
-    break;
-case 4: printf("Arts");
-    break;
-}
-// additional subject selection
+if (stream== 1) {
+        for (i = 0; i < 4; i++) {
+            strcpy(selected_subjects[num_subjects++], medical[i]);
+        }
+    }
+    else if (stream == 2) {
+        for (i = 0; i < 4; i++) {
+            strcpy(selected_subjects[num_subjects++], non_med[i]);
+        }
+    }
+    else if (stream == 3) {
+        for (i = 0; i < 4; i++) {
+            strcpy(selected_subjects[num_subjects++], commerce[i]);
+        }
+    } else if (stream == 4) {
+        for (i = 0; i < 4; i++) {
+            strcpy(selected_subjects[num_subjects++], arts[i]);
+        }
+    } else {
+        printf("Invalid stream choice!\n");
+        return 1; // Exit if the choice is invalid
+    }
 
-int ADDSBJ;
-printf("\nAdditonal Avialble Subjects\n 1- Physical Education\n 2- Infromatic Practices");
+printf("\nAdditonal Avialble Subjects \n1-Physical Education \n2- Infromatic Practices");
 printf("\nChoose your Additional Subject(1-2):");
 scanf("%d", &ADDSBJ);
 
 printf("\nPlease confirm your subjects according to your stream");
 if(stream==1){
-    printf("\n1- Biology\n 2-Chemistry\n 3-English\n 4-Physics");}
+    printf("\n1- Biology \n2-Chemistry \n3-English \n4-Physics");}
     else if (stream==2)
     {
-    printf("\n1- Maths\n 2-Chemistry\n 3-English\n 4-Physics");
+    printf("\n1- Maths \n2-Chemistry \n3-English \n4-Physics");
          }
          else if (stream==3)
          {
             printf("\n1-Bussiness Studies \n2-Accounatncy \n3-English \n4-Economics");
          }
          else{
-            printf("\n1-History\n 2-Pol.Science\n 3-English\n 4-Hindi");
+            printf("\n1-History \n2-Pol.Science \n3-English \n4-Hindi");
          }
         if(ADDSBJ==1){
     printf("\n5- Physical Education");
 }
 else{
     printf("\n5-Informatic Practices");
+    strcpy(selected_subjects[num_subjects++], additional[ADDSBJ- 1]);
 }
-    
+int marks[6];
+    printf("\nEnter marks for the chosen subjects:\n");
+    for (i = 0; i < num_subjects; i++) {
+        printf("%s: ", selected_subjects[i]);
+        scanf("%d", &marks[i]);
+    }
+   //Practical and lab marks
+   int P_marks[6]={0};
+   for(i=0; i< num_subjects; i++){
+   if(marks[i]>=70){
+    P_marks[i]=20;
+   }
+   else if (marks[i]>=60)
+   {
+    P_marks[i]=18;
+   }
+   else if (marks[i]>=50)
+   {
+    P_marks[i]=16;
+   }
+   else{
+    P_marks[i]=13;
+   }
+   }
+   printf("Practical Marks");
+   
+   for(i=0; i< num_subjects; i++){
+    printf("%d\n", P_marks[i]);
+   }
+int T_marks[6];
+for(i=0; i< num_subjects; i++){
+    T_marks[i]=marks[i]+P_marks[i];
+}
+/*for (i = 0; i<=5; i++)
+{
+    printf("%d\n", T_marks[i]);
+}*/
+int F_marks=0;
+for(i=0; i< num_subjects; i++){
+    F_marks += T_marks[i];
+}
+printf("Aggregate Marks %d", F_marks);
+printf("%d", F_marks);
+float Percentage;
+int total_marks=500;
+Percentage=F_marks/total_marks*100;
+printf("Percentage achieved%f", Percentage);
+  /*  // Display entered marks
+    printf("\nMarks Summary:\n");
+    printf("-------------------------\n");
+    printf("| %-15s | %-5s |\n", "Subject", "Marks");
+    printf("-------------------------\n");
+    for (i = 0; i < num_subjects; i++) {
+        printf("| %-15s | %-5d |\n", selected_subjects[i], marks[i]);
+    }
+    printf("-------------------------\n");
+/*printf("\nPROGRESS REPORT-SESSION 2024-25");
+int marks[5];
+printf("Enter your marks subject wise :");
 
+for(i=0; i<5; i++){
+    printf("subjects is :%d", i+1);
+    scanf("%d", &marks[i]);
+}
+    printf("\nYou entered:\n");
+for(i = 0; i < 5; i++) {
+    printf("Subject %d: %d\n", i + 1, marks[i]);
+
+}
+int marks[5]; printf("\nEnter marks for the chosen subjects:\n"); for (i = 0; i < num_subjects; i++) { printf("%s: ", selected_subjects[i]); scanf("%d", &marks[i]); }
+}*/
 }
