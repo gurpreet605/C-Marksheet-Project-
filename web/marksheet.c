@@ -162,4 +162,5 @@ for(i = 0; i < 5; i++) {
 }
 int marks[5]; printf("\nEnter marks for the chosen subjects:\n"); for (i = 0; i < num_subjects; i++) { printf("%s: ", selected_subjects[i]); scanf("%d", &marks[i]); }
 }*/
+
 }

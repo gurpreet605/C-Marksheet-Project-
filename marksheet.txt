@@ -1,0 +1,114 @@
+MM INTERNATIONAL SCHOOL
+MULLANA-AMBALA, 133207
+CONTACT NO: 8059930601, EMAIL ID: info@mmismullana.org
+AFFILIATION NO: 530655
+Student Name: gdhfghdf
+Total Marks: 418
+Percentage Achieved: 0.00%
+Marks Summary:
+
+1-Mathemetics - Theory: 63, Practical: 18, Total: 81
+
+2-Chemistry - Theory: 65, Practical: 18, Total: 83
+
+3-English - Theory: 66, Practical: 18, Total: 84
+
+4-Physics - Theory: 69, Practical: 18, Total: 87
+Informatic Practices - Theory: 65, Practical: 18, Total: 83
+
+
+//
+// to calculate the average 
+int aver;
+aver=F_marks/5;
+printf("Average Marks:%d", aver);
+// code to check wether the candidate is passed or fail in the examination
+if (Percentage>=33){
+    printf("Pass");
+}
+else{
+    printf("fail");
+}
+//Grade calculation
+printf("Grade:");
+if(Percentage<=90){
+    printf("A1");
+    printf(" Excellent performance! Your hard work and dedication have paid off. Keep up the outstanding efforts to maintain this level of excellence.");
+}
+else if (Percentage<=81 && Percentage>90)
+{
+    printf("A2");
+    printf("Great job! You have demonstrated strong understanding and application of the subjects. With a little more effort, you can achieve even greater heights.");
+}else if (Percentage<=71 && Percentage>80)
+{
+    printf("B1");
+    printf("Good work! You have a solid foundation. Consistent effort and a bit more focus can help you improve further.");
+}
+else if (Percentage<=61 && Percentage>70)
+{
+    printf("B2");
+    printf("You’ve shown potential, but there’s room for improvement. Stay focused and work on challenging areas to achieve better results");
+}
+else if (Percentage<=51 && Percentage>60)
+{
+    printf("C1");
+    printf("You’ve made progress, but its essential to dedicate more time to studies. Seek help where needed and remain determined to improve.");
+}
+else if (Percentage<=41 && Percentage>50)
+{
+    printf("C2");
+    printf("You’ve shown potential and made good progress this term. Your performance indicates a solid understanding of the basics, but theres still room for improvement");
+}
+else if (Percentage<=33 && Percentage>40)
+{
+    printf("D");
+    printf("You’ve made progress, but it’s essential to dedicate more time to studies. Seek help where needed and remain determined to improve");
+}
+else {
+    printf("E(Need Improvement)");
+    printf("Its important to stay motivated and work harder. With consistent effort and guidance, you can overcome challenges and perform better");
+}
+
+
+/*
+FILE *file = fopen("marksheet.html", "w"); // Open a file for writing
+    if (file == NULL) {
+        printf("Error opening file!\n");
+        return 1;
+    }
+
+    // Write HTML content
+    fprintf(file, "<!DOCTYPE html>\n");
+    fprintf(file, "<html lang=\"en\">\n");
+    fprintf(file, "<head>\n");
+    fprintf(file, "<meta charset=\"UTF-8\">\n");
+    fprintf(file, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
+    fprintf(file, "<title>Marksheet</title>\n");
+    fprintf(file, "<style>\n");
+    fprintf(file, "table { border-collapse: collapse; width: 100%%; }\n");
+    fprintf(file, "th, td { border: 1px solid black; padding: 8px; text-align: left; }\n");
+    fprintf(file, "</style>\n");
+    fprintf(file, "</head>\n");
+    fprintf(file, "<body>\n");
+    fprintf(file, "<h1>MM INTERNATIONAL SCHOOL</h1>\n");
+    fprintf(file, "<h2>Marksheet for %s</h2>\n", name);
+    fprintf(file, "<p>Total Marks: %d</p>\n", F_marks);
+    fprintf(file, "<p>Percentage Achieved: %.2f%%</p>\n", Percentage);
+    
+    // Print subject details in a table
+    fprintf(file, "<h2>Marks Summary:</h2>\n");
+    fprintf(file, "<table>\n");
+    fprintf(file, "<tr><th>Subject</th><th>Theory</th><th>Practical</th><th>Total</th></tr>\n");
+    
+    for (int i = 0; i < num_subjects; i++) {
+        fprintf(file, "<tr><td>%s</td><td>%d</td><td>%d</td><td>%d</td></tr>\n", selected_subjects[i], marks[i], P_marks[i], T_marks[i]);
+    }
+    
+    fprintf(file, "</table>\n");
+    fprintf(file, "</body>\n");
+    fprintf(file, "</html>\n");
+
+    fclose(file); // Close the file
+    printf("Marksheet saved as 'marksheet.html'\n");*/
+    return 0;
+}

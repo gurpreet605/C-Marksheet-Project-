@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marksheet Generator</title>
+</head>
+<body>
+    <h1>Marksheet Input Form</h1>
+    <form action="process.php" method="post">
+        <label for="name">Student Name:</label>
+        <input type="text" name="name" id="name" required><br><br>
+
+        <label for="roll">Roll Number:</label>
+        <input type="number" name="roll" id="roll" required><br><br>
+
+        <label for="stream">Stream:</label>
+        <select name="stream" id="stream" required>
+            <option value="1">Medical</option>
+            <option value="2">Non-Medical</option>
+            <option value="3">Commerce</option>
+            <option value="4">Arts</option>
+        </select><br><br>
+
+        <label for="subject1">Subject 1 Marks:</label>
+        <input type="number" name="subject1" id="subject1" required><br><br>
+
+        <label for="subject2">Subject 2 Marks:</label>
+        <input type="number" name="subject2" id="subject2" required><br><br>
+
+        <label for="subject3">Subject 3 Marks:</label>
+        <input type="number" name="subject3" id="subject3" required><br><br>
+
+        <label for="subject4">Subject 4 Marks:</label>
+        <input type="number" name="subject4" id="subject4" required><br><br>
+
+        <label for="additional">Additional Subject Marks:</label>
+        <input type="number" name="additional" id="additional" required><br><br>
+
+        <button type="submit">Generate Marksheet</button>
+    </form>
+</body>
+</html>
