@@ -164,6 +164,7 @@ else{
     printf("\nfail");
 }
 //Grade calculation
+char calc;
 printf("\nGrade:");
 if(Percentage>=90){
     printf("\nA1");
@@ -202,6 +203,19 @@ else {
     printf("\nE(Need Improvement)");
     printf("\nIts important to stay motivated and work harder. With consistent effort and guidance, you can overcome challenges and perform better");
 }
+char calculateGrade(float percentage) {
+    if (percentage >= 90) {
+        return 'A';
+    } else if (percentage >= 80) {
+        return 'B';
+    } else if (percentage >= 70) {
+        return 'C';
+    } else if (percentage >= 60) {
+        return 'D';
+    } else {
+        return 'F';
+    }
+}
 
 
 
@@ -219,15 +233,29 @@ FILE *file = fopen("marksheet.html", "w"); // Open a file for writing
     fprintf(file, "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
     fprintf(file, "<title>Marksheet</title>\n");
     fprintf(file, "<style>\n");
-    fprintf(file, "table { border-collapse: collapse; width: 100%%; }\n");
+    fprintf(file, "table { border-collapse: 1px solid; width: 100%%; }\n");
+    fprintf(file, "#logo { width: 200px; height: auto; }\n");
+    fprintf(file, "h1{background-color: black; color:white; text-align:center;}");
+    fprintf(file, "h2{color:#262525; text-align:center;}");
+    fprintf(file, ".pa{display:inline; font-size1.3rem}")
     fprintf(file, "th, td { border: 1px solid black; padding: 8px; text-align: left; }\n");
     fprintf(file, "</style>\n");
     fprintf(file, "</head>\n");
     fprintf(file, "<body>\n");
+    fprintf(file, "<img id=\"logo\" src=\"school.png.png\" alt=\"School Logo\">\n");
     fprintf(file, "<h1>MM INTERNATIONAL SCHOOL</h1>\n");
-    fprintf(file, "<h2>Marksheet for %s</h2>\n", name);
-    fprintf(file, "<p>Total Marks: %d</p>\n", F_marks);
-    fprintf(file, "<p>Percentage Achieved: %.2f%%</p>\n", Percentage);
+    fprintf(file, "<h2>MULLANA AMBALA - 133207</h2>\n");
+    fprintf(file, "<h2>AFFILATION NUMBER: 530665</h2>\n");
+    fprintf(file, "<h1>PROGRESS REPORT-SESSION2024-25");
+    fprintf(file, "<p class =\"pa\">NAME%s</p>", name);
+    fprintf(file, "<p class =\"pa\">FATHER'S NAME %s</p>", F_name);
+    fprintf(file, "<p class =\"pa\">MOTHER'S NAME %s</p>", M_name);
+    fprintf(file, "<p class =\"pa\">ADDRESS %s</p>", address);
+    fprintf(file, "<p>CLASS %d</p>", grade);
+    fprintf(file, "<p>ROLL No. %d</p>", RollNo);
+    fprintf(file, "<p>DOB %d</p>", DOB);
+    fprintf(file, "<p>ADM_No. %d</p>", ADM_No );
+    
 
     // Print subject details in a table
     fprintf(file, "<h2>Marks Summary:</h2>\n");
@@ -239,9 +267,11 @@ FILE *file = fopen("marksheet.html", "w"); // Open a file for writing
     }
 
     fprintf(file, "</table>\n");
+    fprintf(file, "<p>Total Marks: %d</p>\n", F_marks);
+    fprintf(file, "<p>Percentage Achieved: %.2f%%</p>\n", Percentage);
     fprintf(file, "</body>\n");
     fprintf(file, "</html>\n");
-///dsfdfd
+
 
     fclose(file); // Close the file
     printf("Marksheet saved as 'marksheet.html'\n");
